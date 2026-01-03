@@ -1,0 +1,9 @@
+{
+	"name": "ManasviMFactory",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6307a467-48a4-4502-a387-fa960e5527f8",
+		"tenantId": "1405ddc9-3966-42db-a307-3da9cf013776"
+	}
+}
