@@ -1,0 +1,12 @@
+{
+	"name": "Azure_Sql_v1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "manasvi_Azure_Sql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
