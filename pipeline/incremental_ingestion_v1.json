@@ -65,7 +65,13 @@
 				"outputs": [
 					{
 						"referenceName": "Parquet_dynamic_v1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"containers": {
+								"value": "@dataset().containers",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			},
