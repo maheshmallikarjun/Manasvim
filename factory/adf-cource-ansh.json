@@ -1,0 +1,9 @@
+{
+	"name": "adf-cource-ansh",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d1d400c0-fbf8-4320-b41b-9eea62bf4039",
+		"tenantId": "d9c5480f-f7b6-413c-b09b-060f0f4ea173"
+	}
+}
