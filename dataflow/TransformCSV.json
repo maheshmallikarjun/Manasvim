@@ -12,7 +12,15 @@
 					"name": "sourceCSV"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "dataflow_sink",
+						"type": "DatasetReference"
+					},
+					"name": "sink"
+				}
+			],
 			"transformations": [
 				{
 					"name": "selectCols"
@@ -22,6 +30,15 @@
 				},
 				{
 					"name": "split1"
+				},
+				{
+					"name": "derivedColumn1"
+				},
+				{
+					"name": "aggregate"
+				},
+				{
+					"name": "alterRows"
 				}
 			],
 			"scriptLines": [
@@ -54,7 +71,18 @@
 				"filterRows split(payment == 'visa',",
 				"     payment == 'mastercard',",
 				"     payment == 'americanexpress',",
-				"     disjoint: false) ~> split1@(visa, mastercard, amex)"
+				"     disjoint: true) ~> split1@(visa, mastercard, amex)",
+				"split1@amex derive(payment = coalesce(payment, 'N/A')) ~> derivedColumn1",
+				"split1@visa aggregate(groupBy(customer_id),",
+				"     product_id = max(product_id)) ~> aggregate",
+				"aggregate alterRow(insertIf('mam'=='mam')) ~> alterRows",
+				"alterRows sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink"
 			]
 		}
 	}
