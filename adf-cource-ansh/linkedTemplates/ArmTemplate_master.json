@@ -19,6 +19,10 @@
 			"type": "string",
 			"defaultValue": "https://azurefundastorageanshm.dfs.core.windows.net/"
 		},
+		"managerTrigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/16885f61-d969-4751-84ee-1127e0b2a659/resourceGroups/Gowda_azurefundamentals/providers/Microsoft.Storage/storageAccounts/azurefundastorageanshm"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -54,6 +58,9 @@
 					},
 					"linkedserviceDL_properties_typeProperties_url": {
 						"value": "[parameters('linkedserviceDL_properties_typeProperties_url')]"
+					},
+					"managerTrigger_properties_typeProperties_scope": {
+						"value": "[parameters('managerTrigger_properties_typeProperties_scope')]"
 					}
 				}
 			},

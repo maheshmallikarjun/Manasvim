@@ -13,6 +13,9 @@
 		},
 		"linkedserviceDL_properties_typeProperties_url": {
 			"value": "https://azurefundastorageanshm.dfs.core.windows.net/"
+		},
+		"managerTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/16885f61-d969-4751-84ee-1127e0b2a659/resourceGroups/Gowda_azurefundamentals/providers/Microsoft.Storage/storageAccounts/azurefundastorageanshm"
 		}
 	}
 }
