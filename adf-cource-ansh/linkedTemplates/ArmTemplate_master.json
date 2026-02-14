@@ -11,6 +11,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'linkedserviceDL'"
 		},
+		"ls_datalake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_datalake'"
+		},
+		"ls_onprem_file_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_onprem_file'"
+		},
 		"link_git_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://raw.githubusercontent.com"
@@ -18,6 +26,18 @@
 		"linkedserviceDL_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://azurefundastorageanshm.dfs.core.windows.net/"
+		},
+		"ls_datalake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://azurefundastorageanshm.dfs.core.windows.net/"
+		},
+		"ls_onprem_file_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "D:\\Azure Cloud\\Practice Recording 21st July'25\\anshlamba practice ADB\\raw file"
+		},
+		"ls_onprem_file_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "DESKTOP-0LEBTU8\\Dell"
 		},
 		"managerTrigger_properties_typeProperties_scope": {
 			"type": "string",
@@ -53,18 +73,53 @@
 					"linkedserviceDL_accountKey": {
 						"value": "[parameters('linkedserviceDL_accountKey')]"
 					},
+					"ls_datalake_accountKey": {
+						"value": "[parameters('ls_datalake_accountKey')]"
+					},
+					"ls_onprem_file_password": {
+						"value": "[parameters('ls_onprem_file_password')]"
+					},
 					"link_git_properties_typeProperties_url": {
 						"value": "[parameters('link_git_properties_typeProperties_url')]"
 					},
 					"linkedserviceDL_properties_typeProperties_url": {
 						"value": "[parameters('linkedserviceDL_properties_typeProperties_url')]"
 					},
+					"ls_datalake_properties_typeProperties_url": {
+						"value": "[parameters('ls_datalake_properties_typeProperties_url')]"
+					},
+					"ls_onprem_file_properties_typeProperties_host": {
+						"value": "[parameters('ls_onprem_file_properties_typeProperties_host')]"
+					},
+					"ls_onprem_file_properties_typeProperties_userId": {
+						"value": "[parameters('ls_onprem_file_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adf-cource-ansh_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
 					"managerTrigger_properties_typeProperties_scope": {
 						"value": "[parameters('managerTrigger_properties_typeProperties_scope')]"
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-cource-ansh_ArmTemplate_0')]"
+			]
 		}
 	]
 }

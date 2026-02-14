@@ -8,11 +8,26 @@
 		"linkedserviceDL_accountKey": {
 			"value": ""
 		},
+		"ls_datalake_accountKey": {
+			"value": ""
+		},
+		"ls_onprem_file_password": {
+			"value": ""
+		},
 		"link_git_properties_typeProperties_url": {
 			"value": "https://raw.githubusercontent.com"
 		},
 		"linkedserviceDL_properties_typeProperties_url": {
 			"value": "https://azurefundastorageanshm.dfs.core.windows.net/"
+		},
+		"ls_datalake_properties_typeProperties_url": {
+			"value": "https://azurefundastorageanshm.dfs.core.windows.net/"
+		},
+		"ls_onprem_file_properties_typeProperties_host": {
+			"value": "D:\\Azure Cloud\\Practice Recording 21st July'25\\anshlamba practice ADB\\raw file"
+		},
+		"ls_onprem_file_properties_typeProperties_userId": {
+			"value": "DESKTOP-0LEBTU8\\Dell"
 		},
 		"managerTrigger_properties_typeProperties_scope": {
 			"value": "/subscriptions/16885f61-d969-4751-84ee-1127e0b2a659/resourceGroups/Gowda_azurefundamentals/providers/Microsoft.Storage/storageAccounts/azurefundastorageanshm"
