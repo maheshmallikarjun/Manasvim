@@ -172,7 +172,10 @@
 				"inputs": [
 					{
 						"referenceName": "ds_onprem_src_param",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"p_file_name": "blabla"
+						}
 					}
 				],
 				"outputs": [
