@@ -228,7 +228,6 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "firstcopy.csv",
 						"folderPath": "onprem",
 						"fileSystem": "bronze"
 					},

@@ -242,7 +242,7 @@
 								"formatSettings": {
 									"type": "DelimitedTextWriteSettings",
 									"quoteAllText": true,
-									"fileExtension": ".txt"
+									"fileExtension": ".csv"
 								}
 							},
 							"enableStaging": false,
@@ -382,7 +382,7 @@
 								"referenceName": "ds_onprem_src_param",
 								"type": "DatasetReference",
 								"parameters": {
-									"p_file_name": "blabla"
+									"p_file_name": "organizations-100.csv"
 								}
 							}
 						],
